@@ -7,7 +7,6 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Poppins:wght@300;400&display=swap');
         
-        /* Warna Dasar Ungu Lembut */
         body { font-family: 'Poppins', sans-serif; margin: 0; background: #efeaf8; color: #4a4a4a; line-height: 1.5; }
         
         .container { 
@@ -17,28 +16,41 @@
         }
         .fade-in { opacity: 1; }
         
-        /* Warna Emas untuk Judul */
         h1 { font-family: 'Playfair Display', serif; color: #c5a059; font-size: 2.2rem; margin: 5px 0; }
         .intro-text { font-size: 0.9rem; margin-bottom: 20px; font-style: normal; }
+        
+        /* Pengaturan Nama Tamu agar Centering dan Rapi */
+        #nama-tamu {
+            display: block;
+            text-align: center;
+            word-wrap: break-word;
+            padding: 10px 20px;
+            font-size: 1.5rem;
+            color: #4a4a4a;
+            margin: 10px 0;
+        }
         
         .schedule-wrapper { display: flex; justify-content: space-between; gap: 10px; margin: 20px 0; }
         .card { background: #e9e0f5; padding: 15px; border-radius: 15px; border: none; width: 48%; font-size: 0.85rem; }
         .card h3 { color: #c5a059; margin-top: 0; font-size: 0.9rem; }
         
-        /* Countdown */
         .countdown-title { font-size: 0.8rem; font-weight: bold; margin-top: 15px; color: #c5a059; }
         .countdown { display: flex; justify-content: center; gap: 10px; margin: 5px 0 15px 0; }
         .box { background: white; padding: 5px; border-radius: 8px; width: 55px; border: 1px solid #eaddc7; font-size: 0.7rem; }
         .box span { font-size: 1rem; display: block; font-weight: 700; color: #c5a059; }
         
-        /* Tombol Emas */
         .btn-wrapper { display: flex; justify-content: center; gap: 10px; margin-bottom: 30px; }
         .btn { padding: 12px 20px; border-radius: 30px; text-decoration: none; display: inline-block; background: #c5a059; color: white; font-weight: 500; transition: all 0.3s ease; border: none; cursor: pointer; font-size: 0.85rem; }
         .btn:hover { background: #a8874a; transform: scale(1.05); }
         .btn-secondary { background: #b8860b; }
         
         .hidden { display: none; }
-        #cover { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background: #efeaf8; }
+        
+        /* Cover dengan warna berbeda (lebih gelap/kontras) */
+        #cover { 
+            height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; 
+            background: linear-gradient(135deg, #eaddf5, #efeaf8); 
+        }
     </style>
 </head>
 <body>
@@ -49,7 +61,7 @@
         <button class="btn" onclick="bukaUndangan()">Buka Undangan</button>
     </div>
 
-    <div id="content" class="container">
+    <div id="content" class="container hidden">
         <p class="intro-text">
             بِسْــــــــــــــمِ اللهِ الرَّحْمَنِ الرَّحِيْـــــم<br>
             السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ<br>
@@ -63,7 +75,7 @@
                 <p>Kamis<br>02 Juli 2026<br>09.00 WITA s.d Selesai</p>
             </div>
             <div class="card">
-                <h3>Resepsi</h3>
+                <h3>Resepsi Pernikahan</h3>
                 <p>Minggu<br>05 Juli 2026<br>08.00 WITA s.d Selesai</p>
             </div>
         </div>
@@ -96,8 +108,9 @@
         <div style="font-size: 0.85rem; color: #4a4a4a; margin-top: 20px;">
             <p>Atas Kehadiran Bapak/Ibu/Saudara/i kami ucapkan terimakasih</p>
             <p><strong>Hormat kami yang mengundang</strong></p>
-            <p>Kel. Bpk. Sabani & Ibu Norlena<br>
-            Kel. Bpk. Rusmin Aryadi Putra & Ibu Bulkis</p>
+            <p>Bpk. Sabani & Ibu Norlena<br>
+            Bpk. Rusmin Aryadi Putra & Ibu Bulkis</p>
+            Serta Seluruh Keluarga Besar Kedua Mempelai</p>
         </div>
     </div>
 
@@ -134,4 +147,3 @@
     </script>
 </body>
 </html>
-
