@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan Shena & Ikram</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Poppins:wght@300;400&display=swap');
+        
+        /* Warna Dasar Ungu Lembut */
+        body { font-family: 'Poppins', sans-serif; margin: 0; background: #efeaf8; color: #4a4a4a; line-height: 1.5; }
+        
+        .container { 
+            padding: 40px 20px; max-width: 500px; margin: auto; text-align: center; 
+            background: #f5f0fb; border-radius: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            opacity: 0; transition: opacity 1s ease; 
+        }
+        .fade-in { opacity: 1; }
+        
+        /* Warna Emas untuk Judul */
+        h1 { font-family: 'Playfair Display', serif; color: #c5a059; font-size: 2.2rem; margin: 5px 0; }
+        .intro-text { font-size: 0.9rem; margin-bottom: 20px; font-style: normal; }
+        
+        .schedule-wrapper { display: flex; justify-content: space-between; gap: 10px; margin: 20px 0; }
+        .card { background: #e9e0f5; padding: 15px; border-radius: 15px; border: none; width: 48%; font-size: 0.85rem; }
+        .card h3 { color: #c5a059; margin-top: 0; font-size: 0.9rem; }
+        
+        /* Countdown */
+        .countdown-title { font-size: 0.8rem; font-weight: bold; margin-top: 15px; color: #c5a059; }
+        .countdown { display: flex; justify-content: center; gap: 10px; margin: 5px 0 15px 0; }
+        .box { background: white; padding: 5px; border-radius: 8px; width: 55px; border: 1px solid #eaddc7; font-size: 0.7rem; }
+        .box span { font-size: 1rem; display: block; font-weight: 700; color: #c5a059; }
+        
+        /* Tombol Emas */
+        .btn-wrapper { display: flex; justify-content: center; gap: 10px; margin-bottom: 30px; }
+        .btn { padding: 12px 20px; border-radius: 30px; text-decoration: none; display: inline-block; background: #c5a059; color: white; font-weight: 500; transition: all 0.3s ease; border: none; cursor: pointer; font-size: 0.85rem; }
+        .btn:hover { background: #a8874a; transform: scale(1.05); }
+        .btn-secondary { background: #b8860b; }
+        
+        .hidden { display: none; }
+        #cover { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background: #efeaf8; }
+    </style>
+</head>
+<body>
+
+    <div id="cover">
+        <p>Kepada Yth,</p>
+        <h2 id="nama-tamu">Bapak/Ibu/Saudara/i</h2>
+        <button class="btn" onclick="bukaUndangan()">Buka Undangan</button>
+    </div>
+
+    <div id="content" class="container">
+        <p class="intro-text">
+            بِسْــــــــــــــمِ اللهِ الرَّحْمَنِ الرَّحِيْـــــم<br>
+            السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ<br>
+            Dengan memohon Rahmat & Ridho Allah Subhanahu Wa Ta'ala, 
+            kami bermaksud menyelenggarakan Resepsi Pernikahan pada :
+        </p>
+
+        <div class="schedule-wrapper">
+            <div class="card">
+                <h3>Akad Nikah</h3>
+                <p>Kamis<br>02 Juli 2026<br>09.00 WITA s.d Selesai</p>
+            </div>
+            <div class="card">
+                <h3>Resepsi</h3>
+                <p>Minggu<br>05 Juli 2026<br>08.00 WITA s.d Selesai</p>
+            </div>
+        </div>
+
+        <div class="countdown-title">Menuju Akad Nikah</div>
+        <div class="countdown" id="countdown-akad">
+            <div class="box"><span id="days-akad">0</span>Hari</div>
+            <div class="box"><span id="hours-akad">0</span>Jam</div>
+            <div class="box"><span id="minutes-akad">0</span>Menit</div>
+        </div>
+
+        <div class="countdown-title">Menuju Resepsi</div>
+        <div class="countdown" id="countdown-resepsi">
+            <div class="box"><span id="days-res">0</span>Hari</div>
+            <div class="box"><span id="hours-res">0</span>Jam</div>
+            <div class="box"><span id="minutes-res">0</span>Menit</div>
+        </div>
+
+        <h1>Ikram</h1>
+        <p style="font-size: 0.9rem; font-style: italic;">Putra Pertama dari Bpk. Sabani & Ibu Norlena</p>
+        <p style="font-size: 1.2rem; font-weight: bold;">and</p>
+        <h1>Shena</h1>
+        <p style="font-size: 0.9rem; font-style: italic; margin-bottom: 20px;">Putri Pertama dari Bpk. Rusmin AP & Ibu Bulkis</p>
+
+        <div class="btn-wrapper">
+            <a href="https://www.google.com/maps/place/2%C2%B042'00.6%22S+115%C2%B019'58.8%22E/@-2.7002146,115.3329574,3a,75y,43.07h,90t/data=!3m7!1e1!3m5!1sSE0kxNZd6H_pR1ymzi657w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3DSE0kxNZd6H_pR1ymzi657w%26yaw%3D43.068966!7i16384!8i8192!4m4!3m3!8m2!3d-2.700167!4d115.333006?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn">Lokasi Akad</a>
+            <a href="https://www.google.com/maps/place/2%C2%B039'46.4%22S+115%C2%B018'05.8%22E/@0,0,0a,75y/data=!3m4!1e1!3m2!1sEojDs0jhCRHNZETYQ85wPw!2e0!4m4!3m3!8m2!3d-2.662889!4d115.301611?utm_campaign=ml-ardl-mgrc&g_ep=Eg1tbF8yMDI2MDYyNF8wIJvbDyoASAJQAQ%3D%3D" target="_blank" class="btn btn-secondary">Lokasi Resepsi</a>
+        </div>
+
+        <div style="font-size: 0.85rem; color: #4a4a4a; margin-top: 20px;">
+            <p>Atas Kehadiran Bapak/Ibu/Saudara/i kami ucapkan terimakasih</p>
+            <p><strong>Hormat kami yang mengundang</strong></p>
+            <p>Kel. Bpk. Sabani & Ibu Norlena<br>
+            Kel. Bpk. Rusmin Aryadi Putra & Ibu Bulkis</p>
+        </div>
+    </div>
+
+    <audio id="myAudio" loop><source src="lagu.mp3" type="audio/mpeg"></audio>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const namaTamu = urlParams.get('nama');
+        if (namaTamu) { document.getElementById('nama-tamu').innerText = namaTamu.replace(/_/g, ' '); }
+
+        function bukaUndangan() {
+            document.getElementById("cover").style.display = 'none';
+            const content = document.getElementById("content");
+            content.classList.remove('hidden');
+            content.classList.add('fade-in');
+            document.getElementById("myAudio").play();
+        }
+
+        function updateCountdown(targetDate, daysId, hoursId, minutesId) {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+            document.getElementById(daysId).innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+            document.getElementById(hoursId).innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById(minutesId).innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        }
+
+        const akadDate = new Date("July 2, 2026 09:00:00").getTime();
+        const resepsiDate = new Date("July 5, 2026 08:00:00").getTime();
+
+        setInterval(function() {
+            updateCountdown(akadDate, "days-akad", "hours-akad", "minutes-akad");
+            updateCountdown(resepsiDate, "days-res", "hours-res", "minutes-res");
+        }, 1000);
+    </script>
+</body>
+</html>
+/html>
+
